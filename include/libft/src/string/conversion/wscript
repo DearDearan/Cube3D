@@ -1,0 +1,12 @@
+def build(bld):
+	sources = [
+		"long_conversion.c",
+		"int_conversion.c",
+	]
+	lftstrcvn = bld.shlib(
+		source		= sources,
+		features	= "c cshlib",
+		target		= "ftstrcvn",
+		includes	= bld.env.INCLUDES_ROOT
+	)
+	lftstrcvn.post()

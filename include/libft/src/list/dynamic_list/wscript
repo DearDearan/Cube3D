@@ -1,0 +1,12 @@
+def build(bld):
+	sources = [
+		"list_manipulation.c",
+		"polymorphous_push.c"
+	]
+	lftlstdyn = bld.shlib(
+		source		= sources,
+		features	= "c cshlib",
+		target		= "ftlstdyn",
+		includes	= bld.env.INCLUDES_ROOT
+	)
+	lftlstdyn.post()

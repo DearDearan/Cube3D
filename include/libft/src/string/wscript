@@ -1,0 +1,13 @@
+def build(bld):
+	bld.recurse("alteration")
+	bld.recurse("checks")
+	bld.recurse("conversion")
+	bld.recurse("manipulation")
+	bld.recurse("new")
+	lftstr = bld.shlib(
+		features	= "c cshlib",
+		target		= "ftstr",
+		includes	= bld.env.INCLUDES_ROOT,
+		use			= ["ftstralt", "ftstrchk", "ftstrcvn", "ftstrmnp", "ftstrnew"]
+	)
+	lftstr.post()

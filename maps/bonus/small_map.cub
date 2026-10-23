@@ -1,0 +1,18 @@
+NO ./textures/backrooms.jpg
+SO ./textures/backrooms.jpg
+WE ./textures/backrooms.jpg
+EA ./textures/backrooms.jpg
+SP ./textures/gril.png
+DO ./textures/backrooms_d.jpg
+MU ./sounds/LTRR.wav
+FXO ./sounds/op_door.wav
+FXC ./sounds/cl_door.wav
+FXF ./sounds/rug.wav
+
+F 211,175,99
+C 236,212,133
+
+
+111
+1N1
+111

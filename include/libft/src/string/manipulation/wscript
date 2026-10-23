@@ -1,0 +1,12 @@
+def build(bld):
+	sources = [
+		"basic_manipulation.c"
+	]
+	lftstrmnp = bld.shlib(
+		source		= sources,
+		features	= "c cshlib",
+		target		= "ftstrmnp",
+		includes	= bld.env.INCLUDES_ROOT,
+		use			= ["ftstrchk"]
+	)
+	lftstrmnp.post()

@@ -1,0 +1,13 @@
+def build(bld):
+	sources = [
+		"fcntl.c",
+		"readv.c",
+		"writev.c"
+	]
+	lftvfs = bld.shlib(
+		source		= sources,
+		features	= "c cshlib",
+		target		= "ftvfs",
+		includes	= bld.env.INCLUDES_ROOT
+	)
+	lftvfs.post()

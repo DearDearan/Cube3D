@@ -1,0 +1,14 @@
+def build(bld):
+	sources = [
+		"is_charset.c",
+		"is_chartype.c",
+		"is_valid.c",
+		"str_comparison.c"
+	]
+	lftstrchk = bld.shlib(
+		source		= sources,
+		features	= "c cshlib",
+		target		= "ftstrchk",
+		includes	= bld.env.INCLUDES_ROOT
+	)
+	lftstrchk.post()

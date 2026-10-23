@@ -1,0 +1,14 @@
+def build(bld):
+	sources = [
+		"environment.c",
+		"execution.c",
+		"math.c",
+	]
+	lftutl = bld.shlib(
+		source		= sources,
+		features	= "c cshlib",
+		target		= "ftutl",
+		includes	= bld.env.INCLUDES_ROOT,
+		use			= "ftstr"
+	)
+	lftutl.post()

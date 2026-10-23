@@ -1,0 +1,45 @@
+SRC_DIR = src/
+FIL_SRC_DIR = $(SRC_DIR)file/
+LST_SRC_DIR = $(SRC_DIR)list/
+LST_LIN_SRC_DIR = $(LST_SRC_DIR)linked_list/
+LST_DYN_SRC_DIR = $(LST_SRC_DIR)dynamic_list/
+MEM_SRCS_DIR = $(SRC_DIR)memory/
+PRT_SRCS_DIR = $(SRC_DIR)print/
+STR_SRCS_DIR = $(SRC_DIR)string/
+STR_ALT_SRCS_DIR = $(STR_SRCS_DIR)alteration/
+STR_CHK_SRCS_DIR = $(STR_SRCS_DIR)checks/
+STR_CVN_SRCS_DIR = $(STR_SRCS_DIR)conversion/
+STR_MNP_SRCS_DIR = $(STR_SRCS_DIR)manipulation/
+STR_NEW_SRCS_DIR = $(STR_SRCS_DIR)new/
+UTL_SRC_DIR = $(SRC_DIR)utils/
+VFS_SRC_DIR = $(SRC_DIR)very_functional_syscalls/
+
+FFL_FILES = ffopen.c ffread.c ffwrite.c ffclose.c ft_ffilelist.c get_next_line.c
+LST_LIN_FILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+LST_DYN_FILES = list_manipulation.c polymorphous_push.c
+MEM_FILES = ft_bzero.c ft_memchr.c ft_alloc.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c
+PRT_FILES = ft_putstr_fd.c ft_putnbr_fd.c ft_putchar_fd.c ft_putendl_fd.c ft_putuint_base_fd.c printf_helpers.c ft_printf.c
+STR_ALT_FILES = str_alter.c
+STR_CHK_FILES = str_comparison.c is_charset.c is_chartype.c is_valid.c
+STR_CVN_FILES = int_conversion.c long_conversion.c
+STR_MNP_FILES = basic_manipulation.c
+STR_NEW_FILES = ft_split.c ft_strjoin.c ft_strtrim.c based_on_existing.c
+UTL_FILES = environment.c math.c execution.c
+VFS_FILES = fcntl.c readv.c writev.c
+
+FFILE_SOURCES = $(addprefix $(FIL_SRC_DIR), $(FFL_FILES))
+LST_DYN_SOURCES = $(addprefix $(LST_DYN_SRC_DIR), $(LST_DYN_FILES))
+LST_LIN_SOURCES = $(addprefix $(LST_LIN_SRC_DIR), $(LST_LIN_FILES))
+LIST_SOURCES = $(LST_LIN_SOURCES) $(LST_DYN_SOURCES)
+MEMORY_SOURCES = $(addprefix $(MEM_SRCS_DIR), $(MEM_FILES))
+PRINT_SOURCES = $(addprefix $(PRT_SRCS_DIR), $(PRT_FILES))
+STR_ALT_SOURCES = $(addprefix $(STR_ALT_SRCS_DIR), $(STR_ALT_FILES))
+STR_CHK_SOURCES = $(addprefix $(STR_CHK_SRCS_DIR), $(STR_CHK_FILES))
+STR_CVN_SOURCES = $(addprefix $(STR_CVN_SRCS_DIR), $(STR_CVN_FILES))
+STR_MNP_SOURCES = $(addprefix $(STR_MNP_SRCS_DIR), $(STR_MNP_FILES))
+STR_NEW_SOURCES = $(addprefix $(STR_NEW_SRCS_DIR), $(STR_NEW_FILES))
+STRING_SOURCES = $(STR_ALT_SOURCES) $(STR_CHK_SOURCES) $(STR_CVN_SOURCES) $(STR_MNP_SOURCES) $(STR_NEW_SOURCES)
+UTILS_SOURCES = $(addprefix $(UTL_SRC_DIR), $(UTL_FILES))
+VFS_SOURCES = $(addprefix $(VFS_SRC_DIR), $(VFS_FILES))
+
+SOURCES = $(FFILE_SOURCES) $(LIST_SOURCES) $(MEMORY_SOURCES) $(PRINT_SOURCES) $(STRING_SOURCES) $(UTILS_SOURCES) $(VFS_SOURCES)

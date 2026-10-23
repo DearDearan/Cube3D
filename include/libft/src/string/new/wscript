@@ -1,0 +1,15 @@
+def build(bld):
+	sources = [
+		"based_on_existing.c",
+		"ft_split.c",
+		"ft_strjoin.c",
+		"ft_strtrim.c"
+	]
+	lftstrnew = bld.shlib(
+		source		= sources,
+		features	= "c cshlib",
+		target		= "ftstrnew",
+		includes	= bld.env.INCLUDES_ROOT,
+		use			= ["ftmem"]
+	)
+	lftstrnew.post()

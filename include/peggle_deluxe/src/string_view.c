@@ -1,0 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                       ⠀⠀⠀⠀⠀⠀⣴⣾⣿⣿⣿⠷⢠⣤⡀      */
+/*   string_view.c                                       ⠀⢀⣀⣀⣛⡑⢶⣬⣭⢩⣶⣿⣷⣭⢻⣦⡀    */
+/*                                                       ⣴⠛⢿⡟⠛⢿⣦⠹⣿⡆⣿⣿⣿⣿⣷⢩⡶⠃   */
+/*   By: rboutelo <rboutelo@student.42angouleme.fr       ⣿⣖⠾⢗⣶⣾⣿⡇⠿⠷⠸⠿⢟⣛⡵⣫     */
+/*                                                       ⠙⢿⣿⣿⣿⣿⣿⣿⣮⣭⣭⣭⡭⣶⣾⣿     */
+/*   Created: 2026/09/29 06:29:26 by rboutelo           ⠀⠀⣿⣿⣿⠛⠛⠛⣿⣿⣿⠁⠀⠀⠉⠁      */
+/*   Updated: 2026/09/29 06:29:26 by rboutelo           ⠀⠀⠙⠛⠉⠀⠀⠀⠻⠿⠟           */
+/*                                                                            */
+/* ************************************************************************** */
+
+#define PEGGLE_DELUXE_SOURCES
+#include "peggle_deluxe.h"
+
+t_string_view	make_new_sv(char *s)
+{
+	return ((t_string_view){s, ft_strlen(s), s});
+}
+
+void	sv_chop_left(t_string_view *s, intmax_t i)
+{
+	s->string += ft_min(i, s->len);
+	s->len -= ft_min(i, s->len);
+}
+
+void	sv_chop_right(t_string_view *s, intmax_t i)
+{
+	s->len = ft_min(s->len - i, 0);
+}
+
+void	free_sv(t_string_view *sv)
+{
+	free(sv->orig);
+	free(sv);
+}

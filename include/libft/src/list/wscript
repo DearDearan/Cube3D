@@ -1,0 +1,9 @@
+def build(bld):
+	lftlst = bld.shlib(
+		features	= "c cshlib",
+		target		= "ftlst",
+		includes	= bld.env.INCLUDES_ROOT,
+		use			= ["ftlstdyn", "ftlstlin"]
+	)
+	bld.recurse("dynamic_list")
+	bld.recurse("linked_list")
